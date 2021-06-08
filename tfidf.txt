@@ -1,0 +1,16 @@
+%tf_idf calculation
+
+idf_data=zeros(636,636);    
+tf_idf=zeros(266,636);
+out=(cell2mat(fre))';
+out1=nfre;
+for i=1:636
+    sum=0;
+    for j=1:266
+            sum=sum+out(i,j);
+    end
+    cr(i)=sum;
+    idf=log(266/(1+sum));
+    idf_data(i,i)=idf;
+end
+tf_idf=out1*idf_data;
